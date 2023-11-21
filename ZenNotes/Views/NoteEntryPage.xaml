@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenNotes.Views.NoteEntryPage">
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Guardar"
+                     Clicked="OnSaveButtonClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Título -->
+            <Editor Grid.Row="0"
+                    Placeholder="Título"
+                    PlaceholderColor="{StaticResource TertiaryColor}"
+                    Text="{Binding Titulo}"
+                    HeightRequest="50"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    BackgroundColor="{StaticResource AppPrimaryColor}"
+                    TextColor="{StaticResource TertiaryColor}" />
+
+            <!-- Texto -->
+            <Editor Grid.Row="1"
+                    Placeholder="Escribe algo..."
+                    PlaceholderColor="{StaticResource TertiaryColor}"
+                    Text="{Binding Text}"
+                    BackgroundColor="{StaticResource AppPrimaryColor}"
+                    TextColor="{StaticResource TertiaryColor}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

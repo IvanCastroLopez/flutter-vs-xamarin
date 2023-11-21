@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZenNotes.Views.NotesPages"
+             Title="Zen Notes">
+    <ContentPage.Resources>
+        <!-- Define a visual state for the Selected state of the CollectionView -->
+        <Style TargetType="StackLayout">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="{StaticResource AppPrimaryColor}" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <!-- Display notes in a list -->
+        <CollectionView x:Name="collectionView"
+                        Margin="{StaticResource PageMargin}"
+                        SelectionMode="Single"
+                        SelectionChanged="OnSelectionChanged">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   ItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+
+            <!-- Define the appearance of each item in the list -->
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame x:Name="CardFrame"
+                           CornerRadius="10"
+                           IsClippedToBounds="True"
+                           HasShadow="True"
+                           Padding="0"
+                           BackgroundColor="#ffd54f">
+                        <Frame.Margin>
+                            <OnPlatform x:TypeArguments="Thickness"
+                                        Android="10"
+                                        iOS="10"/>
+                        </Frame.Margin>
+                        <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                            <Label Text="{Binding Titulo}" FontAttributes="Bold" FontSize="16" Margin="15,10,10,-5"  TextColor="{StaticResource PrimaryColor}"/>
+                            <Label Text="{Binding Date}" FontSize="12" Margin="15,0,10,0" TextColor="{StaticResource PrimaryColor}"/>
+                            <Label Text="{Binding Text}" FontSize="14" LineBreakMode="WordWrap" Margin="15,0,10,0" TextColor="{StaticResource PrimaryColor}"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Botón circular -->
+        <Button
+            Text="+"
+            BackgroundColor="Black"
+            TextColor="White"
+            FontSize="24"
+            WidthRequest="56"
+            HeightRequest="56"
+            CornerRadius="28"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="0,0,16,16"
+            Clicked="OnAddClicked" />
+    </Grid>
+</ContentPage>

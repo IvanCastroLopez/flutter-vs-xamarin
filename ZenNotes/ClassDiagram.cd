@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ZenNotes.Data.NoteDatabase">
+    <Position X="10.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAARAAAAEAAAAAAAAAAAIAAABAAEAAAA=</HashCode>
+      <FileName>Data\NoteDatabase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Note" />
+      <Property Name="NotesPages" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZenNotes.Models.Note">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAABAAAACAAAABA=</HashCode>
+      <FileName>Models\Note.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZenNotes.Views.NoteEntryPage">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\NoteEntryPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZenNotes.Views.NotesPages">
+    <Position X="5.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAgAAAAAAAAAAAAAkAAAAAAAIAAAAAQCAAA=</HashCode>
+      <FileName>Views\NotesPages.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NoteVisualPage" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZenNotes.Views.NoteVisualPage">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAgAAAAAAAgAQAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Views\NoteVisualPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NoteEntryPage" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ZenNotes.App">
+    <Position X="5.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAFAAAAxAEAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NotesPages1" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
